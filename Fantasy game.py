@@ -1,4 +1,5 @@
-#fantasygameinvetorprint("Nikhil N,USN:1AY24AI075,SEC:O")
+#fantasygameinvetor 
+print("Nikhil N,USN:1AY24AI075,SEC:O")
 game_inventory = {'rope' : 1, 'gold coin' : 42}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 def addToInventory(inventory, addedItems):
