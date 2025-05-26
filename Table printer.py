@@ -1,23 +1,25 @@
 ##Table Printer
-print("Nikhil n, USN:1AY24AI075, SEC:O")
+print("Nikhil N,USN:1AY24AI075,SEC:O")
 def print_table(data):
-    if not data:
-        print("No data to display.")
-        return
-
-    num_columns = len(data[0])
-    col_widths = [max(len(str(row[i])) for row in data) for i in range(num_columns)]
-
+    # data is a list of lists, each inner list is a row
+    # Find max width of each column
+    cols = len(data[0])
+    col_widths = [0] * cols
     for row in data:
-        for i in range(num_columns):
-            print(str(row[i]).ljust(col_widths[i] + 2), end='')
-        print()  
+        for i, item in enumerate(row):
+            col_widths[i] = max(col_widths[i], len(str(item)))
 
+    # Print rows with padding
+    for row in data:
+        row_str = " | ".join(str(item).ljust(col_widths[i]) for i, item in enumerate(row))
+        print(row_str)
+# Example usage:
 table_data = [
     ["Name", "Age", "City"],
-    ["Alice", 30, "New York"],
-    ["Bob", 25, "San Francisco"],
-    ["Charlie", 35, "London"]
+    ["Alice", "24", "New York"],
+    ["Bob", "19", "Los Angeles"],
+    ["Charlie", "32", "Chicago"]
 ]
-
 print_table(table_data)
+
+
