@@ -13,3 +13,4 @@ try:
         user_input = collatz(user_input)
 except ValueError:
     print("Please enter a valid integer.")
+
