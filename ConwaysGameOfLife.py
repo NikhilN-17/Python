@@ -9,10 +9,8 @@ HEIGHT = 20
 
 # Time delay between generations (in seconds)
 DELAY = 0.5
-
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
-
 def print_grid(grid):
     clear_screen()
     for row in grid:
@@ -38,9 +36,11 @@ def next_generation(grid):
             elif grid[i][j] == 0 and neighbors == 3:
                 new_grid[i][j] = 1
     return new_grid
-
 def main():
-    # Initialize grid with random 0s and 1s
+   
+
+
+  # Initialize grid with random 0s and 1s
     grid = np.random.choice([0, 1], size=(HEIGHT, WIDTH), p=[0.8, 0.2])
 
     try:
@@ -50,6 +50,8 @@ def main():
             time.sleep(DELAY)
     except KeyboardInterrupt:
         print("\nSimulation ended.")
-
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
+
+
+
