@@ -9,8 +9,6 @@ grid = [['.', '.', '.', '.', '.', '.'],
         ['O', 'O', 'O', 'O', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.']]
+for row in grid:
+    print(''.join(row))
 
-for y in range(len(grid[0])):
-    for x in range(len(grid)):
-        print(grid[x][y], end='')
-    print()
